@@ -31,12 +31,12 @@ router.post("/notes", function (req, res) {
 //DELETE /api/notes/:id - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique id when it's saved. (UUID)
 //In order to delete a note, you'll need to read all notes from the db.json file, remove the note with the given id property, and then rewrite the notes to the db.json file.
 router.delete("/notes/:id", function (req, res) {
-  fs.readFile("../db/db.json", (err, data) => {
+  fs.readFile(filePath, (err, data) => {
     if (err) throw err;
     const notes = JSON.parse(data);
     const savedNotes = notes.filter((item) => item.id !== req.params.id);
-    fs.writeFileSync(
-      "../db/db.json",
+    fs.writeFile(
+      filePath,
       JSON.stringify(savedNotes, null, 2),
       (err) => {
         if (err) throw err;

@@ -1,8 +1,6 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-var path = require("path");
-var fs = require("fs");
 const apiroutes = require("./routes/apiroutes");
 const htmlroutes = require("./routes/htmlroutes");
 // Sets up the Express App

@@ -1,5 +1,5 @@
-var path = require("path");
-var router = require("express").Router();
+const path = require("path");
+const router = require("express").Router();
 
 //GET /notes - Should return the notes.html file.
 router.get("/notes", function(req, res) {
